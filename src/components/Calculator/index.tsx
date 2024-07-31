@@ -7,7 +7,7 @@ const Calculator: React.FC = () => {
   const [operator, setOperator] = useState("");
 
   const handleNumberClick = (num: string) => {
-    if (operator || displayValue === "0") {
+    if (displayValue === "0") {
       setDisplayValue(num);
     } else {
       setDisplayValue(displayValue + num);
@@ -17,6 +17,7 @@ const Calculator: React.FC = () => {
   const handleOperatorClick = (op: string) => {
     setFirstOperand(displayValue);
     setOperator(op);
+    setDisplayValue("0");
   };
 
   const handleEqualClick = () => {
