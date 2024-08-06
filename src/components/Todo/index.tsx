@@ -1,6 +1,7 @@
 import { KeyboardEvent, useState } from "react";
 import { TodoType } from "./types";
 import Item from "./Item";
+import { Outlet } from "react-router-dom";
 
 export default function Todo() {
   const [todos, setTodos] = useState<TodoType[]>([]);
@@ -62,6 +63,7 @@ export default function Todo() {
           />
         ))}
       </div>
+      <Outlet />
     </div>
   );
 }

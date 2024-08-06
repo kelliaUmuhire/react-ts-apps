@@ -1,5 +1,6 @@
 import { useId } from "react";
 import { TodoType } from "./types";
+import { Link } from "react-router-dom";
 
 export default function Item({
   title,
@@ -13,7 +14,7 @@ export default function Item({
       key={title}
       className="py-3 border-b border-b-gray-200 flex justify-between items-center gap-3"
     >
-      <div>
+      <Link to={title}>
         <input
           type="checkbox"
           name=""
@@ -28,7 +29,7 @@ export default function Item({
         >
           {title}
         </label>
-      </div>
+      </Link>
       <button
         className="bg-zinc-100 rounded-full p-4"
         onClick={() => deleteTodo!(title)}
